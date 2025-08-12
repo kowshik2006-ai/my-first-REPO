@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Clone - Order Food Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #cb202d;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .search-bar {
+            display: flex;
+            margin: 20px;
+        }
+        
+        .search-bar input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #cb202d;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .location i {
+            margin-right: 10px;
+            color: #cb202d;
+        }
+        
+        .restaurants {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .restaurant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .restaurant-image {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .restaurant-info {
+            padding: 15px;
+        }
+        
+        .restaurant-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .restaurant-cuisine {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .restaurant-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        .rating {
+            background-color: #267e3e;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .delivery-time, .cost {
+            color: #666;
+        }
+        
+        footer {
+            background-color: #2d2d2d;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ZOMATO</div>
+        <div>
+            <button style="background: none; border: none; color: white; margin-right: 15px;">Login</button>
+            <button style="background: none; border: none; color: white;">Sign Up</button>
+        </div>
+    </header>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Search for restaurants or cuisines...">
+        <button>Search</button>
+    </div>
+    
+    <div class="location">
+        <i>📍</i>
+        <span>Delivering to: Current Location</span>
+    </div>
+    
+    <div class="restaurants">
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="https://b.zmtcdn.com/data/pictures/9/19532259/3b07e1c4d9b5e8e6e0c9b8d8e5e8e6e0.jpg" alt="Restaurant Image">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">Burger King</div>
+                <div class="restaurant-cuisine">Burgers, American, Fast Food</div>
+                <div class="restaurant-details">
+                    <div class="rating">⭐ 4.2</div>
+                    <div class="delivery-time">25 mins</div>
+                    <div class="cost">₹200 for two</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="https://b.zmtcdn.com/data/pictures/7/19532257/3b07e1c4d9b5e8e6e0c9b8d8e5e8e6e0.jpg" alt="Restaurant Image">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">Domino's Pizza</div>
+                <div class="restaurant-cuisine">Pizza, Italian, Fast Food</div>
+                <div class="restaurant-details">
+                    <div class="rating">⭐ 4.0</div>
+                    <div class="delivery-time">30 mins</div>
+                    <div class="cost">₹300 for two</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="https://b.zmtcdn.com/data/pictures/5/19532255/3b07e1c4d9b5e8e6e0c9b8d8e5e8e6e0.jpg" alt="Restaurant Image">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">Haldiram's</div>
+                <div class="restaurant-cuisine">North Indian, Sweets, Snacks</div>
+                <div class="restaurant-details">
+                    <div class="rating">⭐ 4.5</div>
+                    <div class="delivery-time">35 mins</div>
+                    <div class="cost">₹400 for two</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="https://b.zmtcdn.com/data/pictures/3/19532253/3b07e1c4d9b5e8e6e0c9b8d8e5e8e6e0.jpg" alt="Restaurant Image">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">KFC</div>
+                <div class="restaurant-cuisine">Chicken, Fast Food, American</div>
+                <div class="restaurant-details">
+                    <div class="rating">⭐ 4.1</div>
+                    <div class="delivery-time">20 mins</div>
+                    <div class="cost">₹350 for two</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2023 Zomato Clone. All rights reserved.</p>
+    </footer>
+</body>
+</html>
